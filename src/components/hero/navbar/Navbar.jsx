@@ -1,13 +1,14 @@
-import { IconButton } from "@mui/material";
+import { Drawer, IconButton } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import Logo from "../../../assets/images/logo.png";
 import ArrowDownIcon from "../../../assets/svg/ArrowDownIcon";
+import CloseIcon from "../../../assets/svg/CloseIcon";
 import DiscordIcon from "../../../assets/svg/DiscordIcon";
+import MenuIcon from "../../../assets/svg/MenuIcon";
 import SunIcon from "../../../assets/svg/SunIcon";
 import WalletIcon from "../../../assets/svg/WalletIcon";
 import { CButton, CTypography } from "../../../utility";
-
 const menuItems = [
     {
         id: 1,
@@ -41,8 +42,10 @@ const menuItems = [
         icon: true,
     }
 ]
+
 export default function Navbar() {
     const [active, setActive] = React.useState('');
+    const [open, setOpen] = React.useState(false);
     const LogoSection = () => {
         return (
             <Stack
@@ -50,6 +53,7 @@ export default function Navbar() {
                 justifyContent="space-between"
                 alignItems="center"
                 spacing={2}
+                width="fit-content"
                 sx={{
                     cursor: "pointer",
                     '&:hover': {
@@ -80,26 +84,27 @@ export default function Navbar() {
             </Stack>
         )
     }
-    const MenuSection = () => {
+    const MenuSection = ({ direction }) => {
         return (
             <Stack
-                direction="row"
-                justifyContent="space-between"
+                direction={direction}
+                // justifyContent="space-between"
                 alignItems="center"
                 spacing={2}
+                px={direction === 'column' && 2}
             >
                 {
                     menuItems.map(item => (
                         <Stack
                             key={Math.random()}
                             direction="row"
+                            justifyContent={direction === 'column' && 'center'}
                             sx={{
                                 cursor: "pointer",
                                 '&:hover': {
-                                    color: "#141B22",
+                                    borderBottom: "2px solid #f00",
                                 },
                             }}
-                        //spacing={1}
                         >
                             <CTypography
                                 fontFamily="Bakbak One"
@@ -129,11 +134,11 @@ export default function Navbar() {
             </Stack >
         )
     }
-    const ButtonSection = () => {
+    const ButtonSection = ({ direction }) => {
         return (
             <Stack
-                direction="row"
-                justifyContent="space-between"
+                direction={direction}
+                justifyContent={direction === 'column' ? "space-between" : "space-around"}
                 alignItems="center"
                 spacing={2}
             >
@@ -149,6 +154,14 @@ export default function Navbar() {
                 <CButton
                     backgroundColor="#141B22"
                     btnTitle={'Discord'}
+                    padding={{
+                        xs: '"8px 14px"',
+                        sm: "8px 18px",
+                    }}
+                    fontSize={{
+                        sm: "1rem",
+                        xs: "0.8rem"
+                    }}
                 >
                     <DiscordIcon />
                 </CButton>
@@ -157,6 +170,14 @@ export default function Navbar() {
                     btnTitle={'connect'}
                     color='#141B22'
                     hoverColor={'#20d781'}
+                    padding={{
+                        xs: '"8px 14px"',
+                        sm: "8px 20px",
+                    }}
+                    fontSize={{
+                        sm: "1rem",
+                        xs: "0.8rem"
+                    }}
                 >
                     <WalletIcon />
                 </CButton>
@@ -164,28 +185,109 @@ export default function Navbar() {
         )
     }
     return (
-        <Stack
-            alignItems={"center"}
-            py={2}
-            bgcolor="#040B11"
-            sx={{
-                display: {
-                    md: 'none',
-                    lg: 'flex',
-                }
-            }}
-        >
+        <Stack>
+            {/* navbar */}
             <Stack
-                direction="row"
-                justifyContent="space-between"
-                alignContent={"center"}
-                spacing={10}
+                alignItems={"center"}
+                py={2}
+                bgcolor="#040B11"
+                sx={{
+                    display: {
+                        xs: 'none',
+                        lg: 'flex',
+                    }
+                }}
             >
-                <LogoSection />
-                <MenuSection />
-                <ButtonSection />
+                <Stack
+                    direction="row"
+                    justifyContent="space-between"
+                    alignContent={"center"}
+                    spacing={10}
+                >
+                    <LogoSection />
+                    <MenuSection
+                        direction={"row"}
+                    />
+                    <ButtonSection
+                        direction={"row"}
+                    />
+
+                </Stack>
+            </ Stack>
+            {/* nav mneu */}
+            <Stack
+                display={{
+                    xs: 'flex',
+                    lg: 'none',
+                }}
+                p={2.5}
+            >
+                <Box>
+                    <IconButton
+                        variant="contained"
+                        color="secondary"
+                        onClick={() => setOpen(true)}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Box>
+                <Drawer
+                    open={open}
+                    onClose={() => setOpen(false)}
+                    anchor="left"
+                    variant="temporary"
+                    ModalProps={{
+                        keepMounted: true, // Better open performance on mobile.
+                    }}
+                    PaperProps={{
+                        sx: {
+                            backgroundColor: '#040B11',
+                        }
+                    }}
+                    sx={{
+                        display: { xs: 'block', lg: 'none' },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '70%' },
+                    }}
+                >
+                    <Stack
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems={"center"}
+                        py={2}
+                        px={4}
+                    >
+                        <LogoSection />
+                        <Box>
+                            <IconButton
+                                variant="contained"
+                                color="error"
+                                onClick={() => setOpen(false)}
+                            >
+                                <CloseIcon />
+                            </IconButton>
+                        </Box>
+
+                    </Stack>
+                    <Stack
+                        onClick={() => setOpen(false)}
+                    >
+                        <MenuSection
+                            direction="column"
+                        />
+                    </Stack>
+                    <Stack pt={8}
+                        onClick={() => setOpen(false)}
+
+                    >
+                        <ButtonSection
+                            direction="row"
+                        />
+                    </Stack>
+
+                </Drawer>
+
 
             </Stack>
-        </ Stack>
+        </Stack>
     )
 }
