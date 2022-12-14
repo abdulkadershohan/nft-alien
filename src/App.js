@@ -1,10 +1,11 @@
+import { Stack } from "@mui/system";
+import HeroMain from "./components/hero/HeroMain";
 
 function App() {
   return (
-    <div className="App"
-    >
-
-    </div>
+    <Stack>
+      <HeroMain />
+    </Stack>
   );
 }
 
