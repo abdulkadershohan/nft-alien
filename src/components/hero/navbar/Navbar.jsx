@@ -168,18 +168,24 @@ export default function Navbar() {
             alignItems={"center"}
             py={2}
             bgcolor="#040B11"
+            sx={{
+                display: {
+                    md: 'none',
+                    lg: 'flex',
+                }
+            }}
         >
             <Stack
                 direction="row"
                 justifyContent="space-between"
                 alignContent={"center"}
-                spacing={12}
+                spacing={10}
             >
                 <LogoSection />
                 <MenuSection />
                 <ButtonSection />
 
             </Stack>
-        </Stack>
+        </ Stack>
     )
 }
