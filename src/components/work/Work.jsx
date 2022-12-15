@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 import { CTypography } from "../../utility";
+import './work.css';
 const data = [
     {
         id: 1,
@@ -31,7 +32,7 @@ const data = [
 export default function Work() {
     return (
         <Stack
-            height={'100vh'}
+            gap={6}
         >
             <CTypography
                 fontFamily='Bakbak One'
@@ -53,53 +54,59 @@ export default function Work() {
                 {
                     data.map((item) => {
                         return (
-                            <Stack
-                                sx={{
-                                    py: 2,
-                                    px: 4,
-                                    bgcolor: '#141B22',
-                                    minWidth: 270,
-                                    '&:hover': {
-                                        // border: '3px solid #21E786',
-                                        borderWidth: '3px',
-                                        borderColor: '#21E786',
-                                        borderStyle: 'none',
-                                        // border left 20%  3px
-                                        borderTopStyle: 'solid',
-                                        borderRightStyle: 'solid',
+                            <div className="wrapper">
+                                <div className="btn">
+                                    <Stack
+                                        sx={{
+                                            py: 2,
+                                            px: 4,
+                                            bgcolor: '#141B22',
+                                            minWidth: 310,
+                                            // '&:hover': {
+                                            //     // border: '3px solid #21E786',
+                                            //     borderWidth: '3px',
+                                            //     borderColor: '#21E786',
+                                            //     borderStyle: 'none',
+                                            //     // border left 20%  3px
+                                            //     borderTopStyle: 'solid',
+                                            //     borderRightStyle: 'solid',
 
-                                    }
-                                }}
-                                justifyContent={'center'}
-                                alignItems={'center'}
-                                gap={1}
-                                key={item.id}
-                            >
-                                <Box
-                                    component={'img'}
-                                    src={item?.img}
-                                    sx={{
-                                        height: 60,
-                                        width: 60,
-                                    }}
-                                    alt='work1'
-                                />
-                                <CTypography
-                                    fontFamily='Bakbak One'
-                                    fontSize={'1.1rem'}
-                                    color='#21E786'
-                                    align={'center'}
-                                    textTransform={'uppercase'}
-                                    text={'STEP 4'}
-                                />
-                                <CTypography
-                                    fontFamily='Bakbak One'
-                                    fontSize={'1.3rem'}
-                                    align={'center'}
-                                    textTransform={'capitalize'}
-                                    text={item.title}
-                                />
-                            </Stack>
+                                            // }
+                                        }}
+                                        justifyContent={'center'}
+                                        alignItems={'center'}
+                                        gap={1}
+                                        key={item.id}
+                                    >
+                                        <Box
+                                            component={'img'}
+                                            src={item?.img}
+                                            sx={{
+                                                height: 60,
+                                                width: 60,
+                                            }}
+                                            alt='work1'
+                                        />
+                                        <CTypography
+                                            fontFamily='Bakbak One'
+                                            fontSize={'1.1rem'}
+                                            color='#21E786'
+                                            align={'center'}
+                                            textTransform={'uppercase'}
+                                            text={'STEP 4'}
+                                        />
+                                        <CTypography
+                                            fontFamily='Bakbak One'
+                                            fontSize={'1.3rem'}
+                                            align={'center'}
+                                            textTransform={'capitalize'}
+                                            text={item.title}
+                                        />
+                                    </Stack>
+                                    <span className="BorderTopBottom"></span>
+                                    <span className="BorderLeftRight"></span>
+                                </div>
+                            </div>
                         )
                     })
                 }
