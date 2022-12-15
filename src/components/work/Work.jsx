@@ -54,7 +54,9 @@ export default function Work() {
                 {
                     data.map((item) => {
                         return (
-                            <div className={style.wrapper}>
+                            <div className={style.wrapper}
+                                key={item.id}
+                            >
                                 <div className={style.btn}>
                                     <Stack
                                         sx={{

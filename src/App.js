@@ -1,4 +1,5 @@
 import { Stack } from "@mui/system";
+import Collection from "./components/collection/Collection";
 import HeroMain from "./components/hero/HeroMain";
 import Work from "./components/work/Work";
 
@@ -9,6 +10,7 @@ function App() {
     >
       <HeroMain />
       <Work />
+      <Collection />
     </Stack>
   );
 }
