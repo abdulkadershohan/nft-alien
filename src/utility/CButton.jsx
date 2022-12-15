@@ -13,6 +13,7 @@ export default function CButton({
 	background,
 	hoverColor,
 	color,
+	textHoverColor,
 	...rest
 }) {
 	return (
@@ -29,9 +30,11 @@ export default function CButton({
 				fontWeight: fontWeight ? fontWeight : "400",
 				fontFamily: "Bakbak One",
 				textTransform: "uppercase",
+				border: border,
 				'&:hover': {
 					backgroundColor: hoverColor ? hoverColor : "#231C22",
 					cursor: "pointer",
+					color: textHoverColor,
 				},
 			}}
 			alignItems="center"

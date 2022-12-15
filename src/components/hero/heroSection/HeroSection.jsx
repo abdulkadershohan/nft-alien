@@ -18,12 +18,12 @@ export default function HeroSection() {
                 fontFamily="Bakbak One"
                 align={'center'}
                 fontSize={60}
-                pt={'40%'}
+                pt={'50%'}
             >
                 {title}
             </CTypography>
             <Stack
-                width={700}
+                maxWidth={700}
             >
                 <CTypography
                     fontFamily="Poppins"
@@ -38,6 +38,7 @@ export default function HeroSection() {
                 direction={'row'}
                 justifyContent={'space-between'}
                 spacing={2}
+                py={4}
             >
                 <CButton
                     backgroundColor={'#21E786'}
@@ -53,8 +54,8 @@ export default function HeroSection() {
                     color='#fff'
                     padding={'5px 18px'}
                     fontSize={'0.8rem'}
-                    hoverColor={'#fff'}
-
+                    hoverColor={'#000'}
+                    border={' 2px solid #21E786'}
                 >
                     whitelist now
                 </CButton>
