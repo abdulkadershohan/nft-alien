@@ -37,7 +37,6 @@ export default function CButton({
 					color: textHoverColor,
 				},
 			}}
-			alignItems="center"
 			{...rest}
 		>
 			<Stack
