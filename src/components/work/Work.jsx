@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
 import { CTypography } from "../../utility";
-import './work.css';
+import style from './work.module.css';
 const data = [
     {
         id: 1,
@@ -54,8 +54,8 @@ export default function Work() {
                 {
                     data.map((item) => {
                         return (
-                            <div className="wrapper">
-                                <div className="btn">
+                            <div className={style.wrapper}>
+                                <div className={style.btn}>
                                     <Stack
                                         sx={{
                                             py: 2,
@@ -103,8 +103,8 @@ export default function Work() {
                                             text={item.title}
                                         />
                                     </Stack>
-                                    <span className="BorderTopBottom"></span>
-                                    <span className="BorderLeftRight"></span>
+                                    <span className={style.BorderTopBottom}></span>
+                                    <span className={style.BorderLeftRight}></span>
                                 </div>
                             </div>
                         )
