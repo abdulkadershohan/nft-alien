@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { CButton, CTypography } from "../../utility";
+import style from './story.module.css';
 const cardData = [
     {
         id: 1,
@@ -142,57 +143,65 @@ export default function Story() {
                     >
                         {
                             cardData.map((item, index) => (
-                                <Stack
-                                    key={item.id}
-                                    p={2}
-                                    bgcolor='#141B22'
-                                    gap={2}
-                                    position='relative'
-                                    height={200}
-                                    width={270}
+                                <div className={style.wrapper}
+                                    key={Math.random()}
                                 >
-                                    <CTypography
-                                        fontFamily='Bakbak One'
-                                        fontSize={'3.5rem'}
-                                        color='#21E786'
-                                        text={index > 10 ? index + 1 : '0' + (index + 1)}
-                                        align='center'
-                                        lineHeight={.5}
-                                        pt={4}
-                                        sx={{
-                                            opacity: .3
-                                        }}
-                                    />
-                                    <Box
-                                        position='absolute'
-                                        top={'30%'}
-                                        left={0}
-                                        right={0}
-                                    >
+                                    <div className={style.btn}>
                                         <Stack
-                                            alignItems='center'
+                                            key={item.id}
+                                            p={2}
+                                            bgcolor='#141B22'
+                                            gap={2}
+                                            position='relative'
+                                            height={200}
+                                            width={270}
                                         >
                                             <CTypography
                                                 fontFamily='Bakbak One'
-                                                fontSize={'1.2rem'}
-                                                text={item.title}
+                                                fontSize={'3.5rem'}
+                                                color='#21E786'
+                                                text={index > 10 ? index + 1 : '0' + (index + 1)}
+                                                align='center'
+                                                lineHeight={.5}
+                                                pt={4}
+                                                sx={{
+                                                    opacity: .3
+                                                }}
                                             />
                                             <Box
-                                                maxWidth={220}
+                                                position='absolute'
+                                                top={'30%'}
+                                                left={0}
+                                                right={0}
                                             >
-                                                <CTypography
-                                                    fontFamily='Poppins'
-                                                    fontSize={'0.9rem'}
-                                                    text={item.detail}
-                                                    color='#C2C3C5'
-                                                    textAlign='center'
-                                                />
+                                                <Stack
+                                                    alignItems='center'
+                                                >
+                                                    <CTypography
+                                                        fontFamily='Bakbak One'
+                                                        fontSize={'1.2rem'}
+                                                        text={item.title}
+                                                    />
+                                                    <Box
+                                                        maxWidth={220}
+                                                    >
+                                                        <CTypography
+                                                            fontFamily='Poppins'
+                                                            fontSize={'0.9rem'}
+                                                            text={item.detail}
+                                                            color='#C2C3C5'
+                                                            textAlign='center'
+                                                        />
+                                                    </Box>
+                                                </Stack>
                                             </Box>
+
+
                                         </Stack>
-                                    </Box>
-
-
-                                </Stack>
+                                        <span className={style.BorderTopBottom}></span>
+                                        <span className={style.BorderLeftRight}></span>
+                                    </div>
+                                </div>
                             ))
                         }
 
