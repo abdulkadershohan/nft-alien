@@ -24,6 +24,7 @@ export default function HeroSection() {
             </CTypography>
             <Stack
                 maxWidth={700}
+                px={1}
             >
                 <CTypography
                     fontFamily="Poppins"

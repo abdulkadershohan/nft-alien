@@ -145,6 +145,7 @@ export default function Navbar() {
                 <IconButton
                     variant="contained"
                     color="secondary"
+                    size="small"
                     sx={{
                         backgroundColor: "#141B22",
                     }}
@@ -154,14 +155,9 @@ export default function Navbar() {
                 <CButton
                     backgroundColor="#141B22"
                     btnTitle={'Discord'}
-                    padding={{
-                        xs: '"8px 14px"',
-                        sm: "8px 18px",
-                    }}
-                    fontSize={{
-                        sm: "1rem",
-                        xs: "0.8rem"
-                    }}
+                    padding="6px 14px"
+                    fontSize="0.8rem"
+
                 >
                     <DiscordIcon />
                 </CButton>
@@ -169,15 +165,9 @@ export default function Navbar() {
                     backgroundColor="#21E786"
                     btnTitle={'connect'}
                     color='#141B22'
-                    hoverColor={'#20d781'}
-                    padding={{
-                        xs: '"8px 14px"',
-                        sm: "8px 20px",
-                    }}
-                    fontSize={{
-                        sm: "1rem",
-                        xs: "0.8rem"
-                    }}
+                    hoverColor={'#fff'}
+                    padding="6px 14px"
+                    fontSize="0.8rem"
                 >
                     <WalletIcon />
                 </CButton>
