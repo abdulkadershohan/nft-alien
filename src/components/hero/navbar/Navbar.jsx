@@ -97,37 +97,49 @@ export default function Navbar() {
                     menuItems.map(item => (
                         <Stack
                             key={Math.random()}
-                            direction="row"
-                            justifyContent={direction === 'column' && 'center'}
                             sx={{
-                                cursor: "pointer",
-                                '&:hover': {
-                                    borderBottom: "2px solid #f00",
+                                display: 'inline-block',
+                                cursor: 'pointer',
+                                ':after': {
+                                    content: '""',
+                                    display: 'block',
+                                    width: 0,
+                                    height: '2px',
+                                    backgroundColor: '#f00',
+                                    transition: 'width .3s',
                                 },
+                                ':hover:after': {
+                                    width: '100%',
+                                }
                             }}
                         >
-                            <CTypography
-                                fontFamily="Bakbak One"
-                                fontSize="1rem"
-                                fontWeight="400"
-                                textTransform="uppercase"
-                                alignItems="center"
-                                letterSpacing={' 0.1em'}
-                                color={active === item.id ? "#f00" : "#fff"}
-                                sx={{
-                                    '&:hover': {
-                                        color: "#f00",
-                                    },
-                                }}
-                                component="a"
-                                onClick={() => setActive(item.id)}
+                            <Stack
+                                direction="row"
+                                justifyContent={direction === 'column' && 'center'}
                             >
-                                {item.title}
-                            </CTypography>
-                            {
-                                item.icon && <ArrowDownIcon />
-                            }
+                                <CTypography
+                                    fontFamily="Bakbak One"
+                                    fontSize="1rem"
+                                    fontWeight="400"
+                                    textTransform="uppercase"
+                                    alignItems="center"
+                                    letterSpacing={' 0.1em'}
+                                    color={active === item.id ? "#f00" : "#fff"}
+                                    sx={{
+                                        '&:hover': {
+                                            color: "#f00",
+                                        },
+                                    }}
+                                    component="a"
+                                    onClick={() => setActive(item.id)}
+                                >
+                                    {item.title}
+                                </CTypography>
+                                {
+                                    item.icon && <ArrowDownIcon />
+                                }
 
+                            </Stack>
                         </Stack>
                     ))
                 }
