@@ -20,3 +20,12 @@ ul{
 a{
     text-decoration: none;
 }
+/* scroll bar desigin */
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: #141B22;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #21E786;
+    border-radius: 10px;
+}
