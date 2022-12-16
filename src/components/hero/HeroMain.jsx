@@ -13,6 +13,7 @@ export default function HeroMain() {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 height: '100vh',
+                aspectRatio: '16/9',
             }}
         >
             <Navbar />

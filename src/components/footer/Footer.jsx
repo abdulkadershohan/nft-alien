@@ -146,6 +146,9 @@ export default function Footer() {
                                     alt='logo'
                                     width={110}
                                     height={60}
+                                    sx={{
+                                        aspectRatio: '2 / 1',
+                                    }}
                                 />
                             </Stack>
                         ))

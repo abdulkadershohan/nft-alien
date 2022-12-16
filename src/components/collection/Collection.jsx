@@ -89,6 +89,7 @@ export default function Collection() {
                                         sx={{
                                             width: 286,
                                             height: 286,
+                                            aspectRatio: '1 / 1',
                                         }}
                                     />
                                     <CTypography
