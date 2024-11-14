@@ -11,6 +11,7 @@ export default function HeroBodySection() {
             alignItems={'center'}
             justifyContent={'center'}
         >
+
             <CTypography
                 fontFamily="Bakbak One"
                 align={'center'}
