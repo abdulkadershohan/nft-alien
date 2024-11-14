@@ -1,7 +1,7 @@
 import { Stack } from "@mui/system";
 import React from "react";
-import { CButton, CTypography } from "../../components";
 import { heroBodySectionData } from "../../@fake-data";
+import { CButton, CTypography } from "../../components";
 
 export default function HeroBodySection() {
     const { title, details } = heroBodySectionData;
@@ -14,7 +14,10 @@ export default function HeroBodySection() {
             <CTypography
                 fontFamily="Bakbak One"
                 align={'center'}
-                fontSize={60}
+                fontSize={{
+                    md: 60,
+                    xs: 40
+                }}
                 pt={'50%'}
             >
                 {title}
