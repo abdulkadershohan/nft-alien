@@ -1,31 +1,11 @@
 import { Grid } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
-import { CButton, CTypography } from "../../utility";
+import { storyData } from "../../@fake-data";
+import { CButton, CTypography } from "../../components";
 import style from './story.module.css';
-const cardData = [
-    {
-        id: 1,
-        title: 'Daily Tokens',
-        detail: 'Earn interstellar tokens passively by staking your collectible NFT.',
-    },
-    {
-        id: 2,
-        title: 'Exclusive Discounts',
-        detail: 'Tokens and NFTs can be used for discounts at top fashion brands.',
-    },
-    {
-        id: 3,
-        title: 'Galactic Merch',
-        detail: 'Members-only merch designed by David and other world-renowned artists.',
-    },
-    {
-        id: 4,
-        title: 'Limited-Edition Collabs',
-        detail: 'Get limited-edition items from Alienverse collabs with fashion and luxury brands.',
-    },
-]
-export default function Story() {
+
+export default function StorySection() {
     return (
         <Stack
         >
@@ -142,7 +122,7 @@ export default function Story() {
                         gap={3}
                     >
                         {
-                            cardData.map((item, index) => (
+                            storyData?.map((item, index) => (
                                 <div className={style.wrapper}
                                     key={Math.random()}
                                 >

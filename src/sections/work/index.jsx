@@ -1,35 +1,11 @@
 import { Box } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
-import { CTypography } from "../../utility";
+import { workSectionData } from "../../@fake-data";
+import { CTypography } from "../../components";
 import style from './work.module.css';
-const data = [
-    {
-        id: 1,
-        title: 'Connect Your Wallet',
-        img: require('../../assets/images/work1.png')
-    },
-    {
-        id: 2,
-        title: 'Connect Your Wallet',
-        img: require('../../assets/images/work3.png')
 
-    },
-    {
-        id: 3,
-        title: 'Confirm the Transaction',
-        img: require('../../assets/images/work3.png')
-
-    },
-    {
-        id: 4,
-        title: 'receive Your NFTs',
-        img: require('../../assets/images/work4.png')
-
-    }
-]
-
-export default function Work() {
+export default function WorkSection() {
     return (
         <Stack
             gap={6}
@@ -52,7 +28,7 @@ export default function Work() {
                 flexWrap={'wrap'}
             >
                 {
-                    data.map((item) => {
+                    workSectionData?.map((item) => {
                         return (
                             <div className={style.wrapper}
                                 key={item.id}

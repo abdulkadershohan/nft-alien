@@ -1,52 +1,11 @@
 import { Box, Stack } from "@mui/system";
 import React from "react";
-import { CTypography } from "../../utility";
-import style from './collection2.module.css';
-const data = [
-    {
-        id: 1,
-        name: 'sKISIRS #02',
-        image: require('../../assets/images/collection1.png')
-    },
-    {
-        id: 2,
-        name: 'sKELATON #01',
-        image: require('../../assets/images/collection2.png')
-    },
-    {
-        id: 3,
-        name: 'sKELATON #02',
-        image: require('../../assets/images/collection3.png')
-    },
-    {
-        id: 4,
-        name: 'sKELATON #03',
-        image: require('../../assets/images/collection4.png')
-    },
-    {
-        id: 5,
-        name: 'sKELATON #04',
-        image: require('../../assets/images/collection5.png')
-    },
-    {
-        id: 6,
-        name: 'sKELATON #05',
-        image: require('../../assets/images/collection6.png')
-    },
-    {
-        id: 7,
-        name: 'sKELATON #06',
-        image: require('../../assets/images/collection7.png')
+import { CTypography } from "../../components";
+import style from './collection.module.css';
+import { collectionSectionData } from "../../@fake-data";
 
-    },
-    {
-        id: 8,
-        name: 'sKELATON #07',
-        image: require('../../assets/images/collection8.png')
-    }
-]
 
-export default function Collection() {
+export default function CollectionSection() {
     return (
         <Stack
             gap={6}
@@ -68,11 +27,11 @@ export default function Collection() {
             >
 
                 {
-                    data.map((item) => (
-                        <div class={style.container}
+                    collectionSectionData?.map((item) => (
+                        <div className={style.wrapper}
                             key={item.id}
                         >
-                            <div class={style.gradient}>
+                            <div className={style.btn}>
                                 <Stack
                                     sx={{
                                         p: 2,
@@ -89,6 +48,7 @@ export default function Collection() {
                                         sx={{
                                             width: 286,
                                             height: 286,
+                                            aspectRatio: '1 / 1',
                                         }}
                                     />
                                     <CTypography
@@ -100,6 +60,8 @@ export default function Collection() {
 
 
                                 </Stack>
+                                <span className={style.BorderTopBottom}></span>
+                                <span className={style.BorderLeftRight}></span>
                             </div>
                         </div>
                     ))

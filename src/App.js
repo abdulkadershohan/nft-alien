@@ -1,21 +1,20 @@
 import { Stack } from "@mui/system";
-import Collection from "./components/collection/Collection";
-import Footer from "./components/footer/Footer";
-import HeroMain from "./components/hero/HeroMain";
-import Story from "./components/story/Story";
-import Work from "./components/work/Work";
+import React from "react";
+import { Footer, Navbar } from "./layout";
+import { CollectionSection, HeroSection, StorySection, WorkSection } from "./sections";
 
 function App() {
   return (
-    <Stack
-      gap={6}
-    >
-      <HeroMain />
-      <Work />
-      <Collection />
-      <Story />
+    <React.Fragment>
+      <Navbar />
+      <Stack gap={6}>
+        <HeroSection />
+        <WorkSection />
+        <CollectionSection />
+        <StorySection />
+      </Stack>
       <Footer />
-    </Stack>
+    </React.Fragment>
   );
 }
 

@@ -1,10 +1,9 @@
 import { Stack } from "@mui/system";
 import React from "react";
-import bgImage from '../../assets/images/heroBgImg.png';
-import HeroSection from "./heroSection/HeroSection";
-import Navbar from "./navbar/Navbar";
+import bgImage from '../../assets/images/background/heroBgImg.png';
+import HeroBodySection from "./SectionBody";
 
-export default function HeroMain() {
+export default function Hero() {
     return (
         <Stack
             sx={{
@@ -12,12 +11,11 @@ export default function HeroMain() {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                height: '100vh',
-                aspectRatio: '16/9',
+                // aspectRatio: '16/9',
+                py: 5,
             }}
         >
-            <Navbar />
-            <HeroSection />
+            <HeroBodySection />
         </Stack>
     );
 }

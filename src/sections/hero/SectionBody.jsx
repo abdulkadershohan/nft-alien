@@ -1,13 +1,10 @@
 import { Stack } from "@mui/system";
 import React from "react";
-import { CButton, CTypography } from "../../../utility";
-const data = {
-    title: "EXPLORE NFT COLLECTION",
-    details: `A collection of 2525 highly-fashionable NFTs on the ETH Blockchain. Unique, 
-    metaverse-ready, and designed to benefit their holders.`
-}
-export default function HeroSection() {
-    const { title, details } = data;
+import { CButton, CTypography } from "../../components";
+import { heroBodySectionData } from "../../@fake-data";
+
+export default function HeroBodySection() {
+    const { title, details } = heroBodySectionData;
     return (
         <Stack
             height={'100%'}

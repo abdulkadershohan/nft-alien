@@ -1,47 +1,10 @@
 import { Drawer, IconButton } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React from "react";
-import Logo from "../../../assets/images/logo.png";
-import ArrowDownIcon from "../../../assets/svg/ArrowDownIcon";
-import CloseIcon from "../../../assets/svg/CloseIcon";
-import DiscordIcon from "../../../assets/svg/DiscordIcon";
-import MenuIcon from "../../../assets/svg/MenuIcon";
-import SunIcon from "../../../assets/svg/SunIcon";
-import WalletIcon from "../../../assets/svg/WalletIcon";
-import { CButton, CTypography } from "../../../utility";
-const menuItems = [
-    {
-        id: 1,
-        title: "Home",
-        link: "/",
-        icon: true,
+import { menuItems } from "../../@fake-data";
+import { ArrowDownIcon, CloseIcon, DiscordIcon, MenuIcon, SunIcon, WalletIcon } from "../../assets/svg";
+import { CButton, CTypography } from "../../components";
 
-    },
-    {
-        id: 2,
-        title: "About",
-        link: "/about",
-        icon: true,
-    },
-    {
-        id: 3,
-        title: "roadmap",
-        link: "/roadmap",
-        icon: true,
-    },
-    {
-        id: 4,
-        title: "COLLECTION",
-        link: "/collection",
-        icon: false,
-    },
-    {
-        id: 5,
-        title: "FAQ",
-        link: "/faq",
-        icon: true,
-    }
-]
 
 export default function Navbar() {
     const [active, setActive] = React.useState('');
@@ -66,7 +29,7 @@ export default function Navbar() {
                 {/* logo section */}
                 <Box
                     component="img"
-                    src={Logo}
+                    src={'/logo.png'}
                     alt="logo"
                     sx={{
                         width: 30,
@@ -88,13 +51,12 @@ export default function Navbar() {
         return (
             <Stack
                 direction={direction}
-                // justifyContent="space-between"
                 alignItems="center"
                 spacing={2}
                 px={direction === 'column' && 2}
             >
                 {
-                    menuItems.map(item => (
+                    menuItems?.map(item => (
                         <Stack
                             key={Math.random()}
                             sx={{
@@ -192,7 +154,7 @@ export default function Navbar() {
             <Stack
                 alignItems={"center"}
                 py={2}
-                bgcolor="#040B11"
+                // bgcolor="#040B11"
                 sx={{
                     display: {
                         xs: 'none',
