@@ -1,7 +1,7 @@
 import { Stack } from "@mui/system";
 import React from "react";
 import { Footer, Navbar } from "./layout";
-import { CollectionSection, HeroSection, StorySection, WorkSection } from "./sections";
+import { CollectionSection, CollectionSectionV2, HeroSection, StorySection, WorkSection } from "./sections";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
         <HeroSection />
         <WorkSection />
         <CollectionSection />
+        <CollectionSectionV2 />
         <StorySection />
       </Stack>
       <Footer />
